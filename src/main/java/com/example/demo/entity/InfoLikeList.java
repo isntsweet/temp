@@ -2,27 +2,27 @@ package com.example.demo.entity;
 
 import java.time.LocalDateTime;
 
-public class GenLikeList {
+public class InfoLikeList {
 	private int lid;
-	private int genBid;
+	private int infoBid;
 	private String uid;
 	private LocalDateTime likeTime;
 
-	public GenLikeList() { }
-	public GenLikeList(int genBid, String uid) {
-		this.genBid = genBid;
+	public InfoLikeList() { }
+	public InfoLikeList(int infoBid, String uid) {
+		this.infoBid = infoBid;
 		this.uid = uid;
 	}
-	public GenLikeList(int lid, int genBid, String uid, LocalDateTime likeTime) {
+	public InfoLikeList(int lid, int infoBid, String uid, LocalDateTime likeTime) {
 		this.lid = lid;
-		this.genBid = genBid;
+		this.infoBid = infoBid;
 		this.uid = uid;
 		this.likeTime = likeTime;
 	}
 
 	@Override
 	public String toString() {
-		return "Like [lid=" + lid + ", genBid=" + genBid + ", uid=" + uid + ", likeTime=" + likeTime + "]";
+		return "Like [lid=" + lid + ", infoBid=" + infoBid + ", uid=" + uid + ", likeTime=" + likeTime + "]";
 	}
 
 	public int getLid() {
@@ -31,11 +31,11 @@ public class GenLikeList {
 	public void setLid(int lid) {
 		this.lid = lid;
 	}
-	public int getgenBid() {
-		return genBid;
+	public int getinfoBid() {
+		return infoBid;
 	}
-	public void setgenBid(int genBid) {
-		this.genBid = genBid;
+	public void setinfoBid(int infoBid) {
+		this.infoBid = infoBid;
 	}
 	public String getUid() {
 		return uid;

@@ -29,5 +29,5 @@ public interface GenBoardService {
 	
 	public List<GenBoard> getGenBoardListByUid(String uid);
 	
-	public int updateLikeCount(int bid, String uid);
+	public int updateLikeCount(int genBid, String uid);
 }

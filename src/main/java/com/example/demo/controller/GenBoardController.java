@@ -221,9 +221,9 @@ public class GenBoardController {
 	}
 	
 	@ResponseBody
-	@GetMapping("/like/{bid}/{uid}")
-	public String like(@PathVariable int bid, @PathVariable String uid) {
-		int count = genBoardService.updateLikeCount(bid, uid);
+	@GetMapping("/like/{genBid}/{uid}")
+	public String like(@PathVariable int genBid, @PathVariable String uid) {
+		int count = genBoardService.updateLikeCount(genBid, uid);
 		return count + "";
 	}
 }

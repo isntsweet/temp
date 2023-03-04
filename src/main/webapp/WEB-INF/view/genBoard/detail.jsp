@@ -13,7 +13,7 @@
     		console.log("==============", mid, uid);
     		$.ajax({
     			type: 'GET',
-    			url: '/user/genBoard/like/' + mid + '/' + uid,
+    			url: '/goodM/genBoard/like/' + mid + '/' + uid,
     			success: function(count) {
     				$('#likeCount').html(count);
     			}
