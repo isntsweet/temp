@@ -39,11 +39,11 @@ public interface GenBoardDao {
 	public void increaseCount(int genBid, String field);
 
 	@Insert("INSERT INTO genBoard VALUES(DEFAULT, #{uid}, #{title}, #{content},"
-			+ " DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{files})")
+			+ " DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{files}), default")
 	public void insertGenBoard(GenBoard genBoard);
 
 	@Update("UPDATE genBoard SET title=#{title}, content=#{content}, "
-			+ " modTime=NOW(), files=#{files} WHERE genBid=#{genBid}, default")
+			+ " modTime=NOW(), files=#{files} WHERE genBid=#{genBid}")
 	public void updateGenBoard(GenBoard genBoard);
 
 	@Update("UPDATE genBoard SET isDeleted=1 WHERE genBid=#{genBid}")
