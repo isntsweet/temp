@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dao.GenBoardDao;
 import com.example.demo.dao.ReplyDao;
 import com.example.demo.entity.GenBoard;
-import com.example.demo.entity.Likelist;
+import com.example.demo.entity.GenLikelist;
 import com.example.demo.entity.Reply;
 
 @Service
@@ -87,9 +87,9 @@ public class GenBoardServiceImpl implements GenBoardService {
 	
 	@Override
 	public int updateLikeCount(int genBid, String uid) {
-		Likelist likeList = genBoardDao.getLikeEntry(genBid, uid);
+		GenLikelist likeList = genBoardDao.getLikeEntry(genBid, uid);
 		if (likeList == null) {
-			likeList = new Likelist(genBid, uid);
+			likeList = new GenLikelist(genBid, uid);
 			genBoardDao.insertLike(likeList);
 			genBoardDao.increaseCount(genBid, "likeCount");
 		}

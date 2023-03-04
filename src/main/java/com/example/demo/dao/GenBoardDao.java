@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.entity.GenBoard;
-import com.example.demo.entity.Likelist;
+import com.example.demo.entity.GenLikelist;
 
 @Mapper
 public interface GenBoardDao {
@@ -52,13 +52,13 @@ public interface GenBoardDao {
 	@Select("select * from genBoard where uid=#{uid} ORDER BY genBid DESC")
 	List<GenBoard> getGenBoardListByUid(String uid);
 	
-	@Select("select likeCount from genBoard where bid=#{bid}")
+	@Select("select likeCount from board where bid=#{bid}")
 	public int getLikeCount(int bid);
 
-	@Insert("insert into likelist values(default, #{uid}, #{genBid}, #{infoBid}, default)")
-	public void insertLike(Likelist likelist);
+	@Insert("insert into likeTable values(default, #{bid}, #{uid}, default)")
+	public void insertLike(GenLikelist genLike);
 
 	@Select("select * from likeTable where bid=#{bid} and uid=#{uid}")
-	public Likelist getLikeEntry(int bid, String uid);
+	public GenLikelist getLikeEntry(int bid, String uid);
 
 }
