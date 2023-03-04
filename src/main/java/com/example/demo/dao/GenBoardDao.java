@@ -43,7 +43,7 @@ public interface GenBoardDao {
 	public void insertGenBoard(GenBoard genBoard);
 
 	@Update("UPDATE genBoard SET title=#{title}, content=#{content}, "
-			+ " modTime=NOW(), files=#{files} WHERE genBid=#{genBid}")
+			+ " modTime=NOW(), files=#{files} WHERE genBid=#{genBid}, default")
 	public void updateGenBoard(GenBoard genBoard);
 
 	@Update("UPDATE genBoard SET isDeleted=1 WHERE genBid=#{genBid}")
